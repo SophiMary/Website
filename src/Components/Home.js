@@ -1,13 +1,11 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import productBG from "./Background.png";
-import productDownBG from "./CreatorBackground.png";
 import "./Home.css";
 
 const useStyles = makeStyles(theme => ({
   page: {
-    background: `url(${productBG}), url(${productDownBG})`,
-    backgroundPosition: "50% -350%, 36% 190%",
+    background: `url(${productBG})`,
     height: "95vh",
     padding: "15px",
     display: "flex",
@@ -26,6 +24,8 @@ const useStyles = makeStyles(theme => ({
 
 const Home = props => {
   const classes = useStyles();
+
+
   return (
     <div className={classes.page}>{props.info} Page</div>
   );

@@ -48,6 +48,16 @@ const useStyles = makeStyles(theme => ({
         textTransform: "none",
         whiteSpace: "nowrap",
     },
+    selectedItems: {
+        color: "#262A94",
+        fontWeight: "600",
+        fontSize: "20px",
+        marginRight: "40px",
+        textTransform: "none",
+        whiteSpace: "nowrap",
+        borderBottom: "2px solid #262A94",
+        borderRadius: "0",
+    },
     lastNavItems: {
         backgroundColor: "#9A60F2 !important",
         color: "#fff",
@@ -76,8 +86,6 @@ const useStyles = makeStyles(theme => ({
         justifyContent: "space-evenly",
         "& .MuiButton-root:hover": {
             backgroundColor: "inherit",
-            borderBottom: "3px solid currentColor",
-            borderRadius: "0"
         },
     },
 }));
@@ -89,6 +97,11 @@ const Header = props => {
     const open = Boolean(anchorEl);
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+    const [ homeSelected, setHomeSelected ] = React.useState(false)
+    const [ productSelected, setProductSelected ] = React.useState(false)
+    const [ personsSelected, setPersonsSelected ] = React.useState(false)
+    const [ blogSelected, setBlogSelected ] = React.useState(false)
+    const [ meetSelected, setMeetSelected ] = React.useState(false)
 
     const handleMenu = event => {
         setAnchorEl(event.currentTarget);
@@ -177,32 +190,32 @@ const Header = props => {
                     ) : (
                             <div className={classes.headerOptions}>
                                 <Button
-                                    className={classes.navItems}
-                                    onClick={() => handleButtonClick("/")}
+                                    className={homeSelected ? classes.selectedItems : classes.navItems}
+                                    onClick={() => { handleButtonClick("/"); setHomeSelected(true); setProductSelected(false); setPersonsSelected(false); setBlogSelected(false); setMeetSelected(false)}}
                                 >
                                     Home
                                 </Button>
                                 <Button
-                                    className={classes.navItems}
-                                    onClick={() => handleButtonClick("/product")}
+                                    className={productSelected ? classes.selectedItems : classes.navItems}
+                                    onClick={() => {handleButtonClick("/product"); setHomeSelected(false); setProductSelected(true); setPersonsSelected(false); setBlogSelected(false); setMeetSelected(false)}}
                                 >
                                     Product
                                 </Button>
                                 <Button
-                                    className={classes.navItems}
-                                    onClick={() => handleButtonClick("/personas")}
+                                    className={personsSelected ? classes.selectedItems : classes.navItems}
+                                    onClick={() => {handleButtonClick("/personas"); setHomeSelected(false); setProductSelected(false); setPersonsSelected(true); setBlogSelected(false); setMeetSelected(false)}}
                                 >
                                     Personas
                                 </Button>
                                 <Button
-                                    className={classes.navItems}
-                                    onClick={() => handleButtonClick("/blog")}
+                                    className={blogSelected ? classes.selectedItems : classes.navItems}
+                                    onClick={() => {handleButtonClick("/blog"); setHomeSelected(false); setProductSelected(false); setPersonsSelected(false); setBlogSelected(true); setMeetSelected(false)}}
                                 >
                                     Blog
                                 </Button>
                                 <Button
-                                    className={classes.navItems}
-                                    onClick={() => handleButtonClick("/meet-the-zipsters")}
+                                    className={meetSelected ? classes.selectedItems : classes.navItems}
+                                    onClick={() => {handleButtonClick("/meet-the-zipsters"); setHomeSelected(false); setProductSelected(false); setPersonsSelected(false); setBlogSelected(false); setMeetSelected(true)}}
                                 >
                                     Meet The Zipsters
                                 </Button>
