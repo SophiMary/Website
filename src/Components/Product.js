@@ -22,36 +22,32 @@ const useStyles = makeStyles(theme => ({
     },
     image1: {
         background: `url(${productBG}), url(${creatorBG})`,
-        backgroundPosition: "50% -350%, 36% 190%",
-        padding: "15px",
-        [theme.breakpoints.down("md")]: {
-            backgroundPosition: "50% -330%, 34% 183%",
-        },
-        [theme.breakpoints.down("sm")]: {
-            backgroundPosition: "20% -63%, 21% 221%",
-        },
+        // [theme.breakpoints.down("md")]: {
+        //     backgroundPosition: "50% -330%, 34% 183%",
+        // },
+        // [theme.breakpoints.down("sm")]: {
+        //     backgroundPosition: "20% -63%, 21% 221%",
+        // },
     },
     image2: {
-        background: `url(${playerBG}), url(${productBG})`,
-        backgroundPosition: "10px 20px , 20px 30px",
-        padding: "15px",
-        [theme.breakpoints.down("md")]: {
-            backgroundPosition: "50% -330%, 34% 183%",
-        },
-        [theme.breakpoints.down("sm")]: {
-            backgroundPosition: "20% -63%, 21% 221%",
-        },
+        background: `url(${productBG}), url(${playerBG})`,
+    //     backgroundPosition: "10px 20px , 20px 30px",
+    //     [theme.breakpoints.down("md")]: {
+    //         backgroundPosition: "50% -330%, 34% 183%",
+    //     },
+    //     [theme.breakpoints.down("sm")]: {
+    //         backgroundPosition: "20% -63%, 21% 221%",
+    //     },
     },
     image3: {
-        background: `url(${dashboardBG}), url(${productBG})`,
-        backgroundPosition: "50% -350%, 36% 190%",
-        padding: "15px",
-        [theme.breakpoints.down("md")]: {
-            backgroundPosition: "50% -330%, 34% 183%",
-        },
-        [theme.breakpoints.down("sm")]: {
-            backgroundPosition: "20% -63%, 21% 221%",
-        },
+        background: `url(${productBG}), url(${dashboardBG})`,
+        // backgroundPosition: "50% -350%, 36% 190%",
+        // [theme.breakpoints.down("md")]: {
+        //     backgroundPosition: "50% -330%, 34% 183%",
+        // },
+        // [theme.breakpoints.down("sm")]: {
+        //     backgroundPosition: "20% -63%, 21% 221%",
+        // },
     },
     content: {
         color: "#262A94",
