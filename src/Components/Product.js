@@ -23,17 +23,17 @@ const useStyles = makeStyles(theme => ({
     image1: {
         background: `url(${creatorBG}), url(${productBG})`,
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "97% 90%, 60% 244%",
+        backgroundPosition: "40% 96%, 45% 140%",
     },
     image2: {
         background: `url(${playerBG}), url(${productBG})`,
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "97% 90%, 60% 244%",
+        backgroundPosition: "40% 96%, 45% 140%",
     },
     image3: {
         background: `url(${dashboardBG}), url(${productBG})`,
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "97% 90%, 60% 244%",
+        backgroundPosition: "40% 96%, 45% 140%",
     },
     content: {
         color: "#262A94",
@@ -56,7 +56,7 @@ const useStyles = makeStyles(theme => ({
         color: "#262A94",
         fontSize: "28px",
         fontWeight: "normal",
-        marginTop: "40px",
+        marginTop: "120px",
         [theme.breakpoints.down("sm")]: {
             marginTop: "10px",
             fontSize: "15px",
@@ -70,7 +70,7 @@ const useStyles = makeStyles(theme => ({
         olor: "#262A94",
         fontSize: "28px",
         fontWeight: "600",
-        marginTop: "40px",
+        marginTop: "120px",
         [theme.breakpoints.down("sm")]: {
             marginTop: "10px",
             fontSize: "15px",

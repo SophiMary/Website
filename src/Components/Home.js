@@ -13,12 +13,6 @@ const useStyles = makeStyles(theme => ({
     alignItems: "center",
     fontSize: "32px",
     textAlign: "center",
-    [theme.breakpoints.down("md")]: {
-      backgroundPosition: "50% -330%, 34% 183%",
-    },
-    [theme.breakpoints.down("sm")]: {
-      backgroundPosition: "20% -63%, 21% 221%",
-    },
   },
 }));
 

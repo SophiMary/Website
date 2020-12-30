@@ -5,7 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles(theme => ({
     productPage: {
         backgroundColor: "#fff",
-        padding: "20px",
+        padding: "10px",
         marginTop: "30px",
         borderRadius: "40px",
         boxShadow: "3px 4px 25px 2px #BCC3DC"
