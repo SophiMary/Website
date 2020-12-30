@@ -1,7 +1,6 @@
 import React from "react";
 import Home from "./Components/Home";
 import Product from "./Components/Product";
-// import About from "./About";
 import Header from "./Components/Header";
 import { Route, Switch } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";

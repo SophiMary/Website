@@ -3,14 +3,14 @@ import { makeStyles } from "@material-ui/core/styles";
 import { BrowserRouter, Route, Link } from "react-router-dom";
 import { Grid, Paper } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
-import productBG from "./Background.png";
-import creatorBG from "./CreatorBackground.png";
-import playerBG from "./PlayerBackground.png"
-import dashboardBG from "./DashboardBackground.png"
+import productBG from "./images/Background.png";
+import creatorBG from "./images/CreatorBackground.png";
+import playerBG from "./images/PlayerBackground.png"
+import dashboardBG from "./images/DashboardBackground.png"
+import creatorImg from "./images/CreatorGraphic.png"
+import playerImg from "./images/PlayerGraphic.png"
+import dashboardImg from "./images/DashboardGraphic.png"
 import ProductPages from "./ProductPages";
-import creatorImg from "./CreatorGraphic.png"
-import playerImg from "./PlayerGraphic.png"
-import dashboardImg from "./DashboardGraphic.png"
 
 const useStyles = makeStyles(theme => ({
     product: {
@@ -21,33 +21,19 @@ const useStyles = makeStyles(theme => ({
         justifyContent: "center",
     },
     image1: {
-        background: `url(${productBG}), url(${creatorBG})`,
-        // [theme.breakpoints.down("md")]: {
-        //     backgroundPosition: "50% -330%, 34% 183%",
-        // },
-        // [theme.breakpoints.down("sm")]: {
-        //     backgroundPosition: "20% -63%, 21% 221%",
-        // },
+        background: `url(${creatorBG}), url(${productBG})`,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "97% 90%, 60% 244%",
     },
     image2: {
-        background: `url(${productBG}), url(${playerBG})`,
-    //     backgroundPosition: "10px 20px , 20px 30px",
-    //     [theme.breakpoints.down("md")]: {
-    //         backgroundPosition: "50% -330%, 34% 183%",
-    //     },
-    //     [theme.breakpoints.down("sm")]: {
-    //         backgroundPosition: "20% -63%, 21% 221%",
-    //     },
+        background: `url(${playerBG}), url(${productBG})`,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "97% 90%, 60% 244%",
     },
     image3: {
-        background: `url(${productBG}), url(${dashboardBG})`,
-        // backgroundPosition: "50% -350%, 36% 190%",
-        // [theme.breakpoints.down("md")]: {
-        //     backgroundPosition: "50% -330%, 34% 183%",
-        // },
-        // [theme.breakpoints.down("sm")]: {
-        //     backgroundPosition: "20% -63%, 21% 221%",
-        // },
+        background: `url(${dashboardBG}), url(${productBG})`,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "97% 90%, 60% 244%",
     },
     content: {
         color: "#262A94",
@@ -107,9 +93,9 @@ const useStyles = makeStyles(theme => ({
 function Product() {
     const [selected, setSelected] = React.useState(true);
     const [secondSelected, setSecondSelected] = React.useState(false);
-    const [ creatorSelected, setCreatorSelected ] = React.useState(false);
-    const [ playerSelected, setPlayerSelected ] = React.useState(false);
-    const [ dashboardSelected, setDashboardSelected ] = React.useState(false);
+    const [creatorSelected, setCreatorSelected] = React.useState(false);
+    const [playerSelected, setPlayerSelected] = React.useState(false);
+    const [dashboardSelected, setDashboardSelected] = React.useState(false);
     const classes = useStyles();
 
     return (
@@ -125,14 +111,14 @@ function Product() {
                                 <Grid item className={classes.tab} md={4}>
                                     <Paper className={classes.paper}>
                                         <Typography className={creatorSelected ? classes.selectedProductSection : classes.productSection}>
-                                            <Link to="/product/creator" onClick={() => { setSelected(true); setCreatorSelected(true); setPlayerSelected(false); setDashboardSelected(false)}}>Creator</Link>
+                                            <Link to="/product/creator" onClick={() => { setSelected(true); setCreatorSelected(true); setPlayerSelected(false); setDashboardSelected(false) }}>Creator</Link>
                                         </Typography>
                                     </Paper>
                                 </Grid>
                                 <Grid item className={classes.tab} md={4}>
                                     <Paper className={classes.paper}>
                                         <Typography className={playerSelected ? classes.selectedProductSection : classes.productSection}>
-                                            <Link to="/product/player" onClick={() => { setSelected(false); setSecondSelected(true); setCreatorSelected(false); setPlayerSelected(true); setDashboardSelected(false)}}>Player</Link>
+                                            <Link to="/product/player" onClick={() => { setSelected(false); setSecondSelected(true); setCreatorSelected(false); setPlayerSelected(true); setDashboardSelected(false) }}>Player</Link>
                                         </Typography>
                                     </Paper>
                                 </Grid>

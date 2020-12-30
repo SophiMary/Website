@@ -10,7 +10,7 @@ import Menu from "@material-ui/core/Menu";
 import Button from "@material-ui/core/Button";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { withRouter } from "react-router-dom";
-import logo from "./logo.png";
+import logo from "./images/logo.png";
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -151,6 +151,7 @@ const Header = props => {
                     <Typography variant="h6" className={classes.title}>
                         <img className={classes.brandLogo} src={logo} alt="logo" onClick={() => handleButtonClick("/")} />
                     </Typography>
+                    {/* Menu Bar */}
                     {isMobile ? (
                         <>
                             <IconButton
@@ -188,6 +189,7 @@ const Header = props => {
                             </Menu>
                         </>
                     ) : (
+                        // Nav Bar
                             <div className={classes.headerOptions}>
                                 <Button
                                     className={homeSelected ? classes.selectedItems : classes.navItems}

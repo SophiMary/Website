@@ -8,7 +8,7 @@ const useStyles = makeStyles(theme => ({
         padding: "20px",
         marginTop: "30px",
         borderRadius: "40px",
-        boxShadow: "24px 24px 26px 0px #BCC3DC"
+        boxShadow: "3px 4px 25px 2px #BCC3DC"
     },
     tabImages: {
         width: "auto",

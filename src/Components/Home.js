@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import productBG from "./Background.png";
+import productBG from "./images/Background.png";
 import "./Home.css";
 
 const useStyles = makeStyles(theme => ({
