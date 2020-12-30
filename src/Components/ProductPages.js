@@ -12,14 +12,12 @@ const useStyles = makeStyles(theme => ({
     },
     tabImages: {
         width: "auto",
-        padding: "10px",
         [theme.breakpoints.down("md")]: {
             width: "700px",
             padding: "5px",
         }, 
         [theme.breakpoints.down("xs")]: {
             width: "250px",
-            padding: "5px",
         }, 
     },
 }));

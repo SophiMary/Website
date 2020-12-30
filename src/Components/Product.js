@@ -39,7 +39,7 @@ const useStyles = makeStyles(theme => ({
         color: "#262A94",
         fontWeight: "600",
         fontSize: "35px",
-        marginTop: "120px",
+        marginTop: "80px",
         [theme.breakpoints.down("sm")]: {
             fontSize: "20px",
             marginTop: "20px",
@@ -56,7 +56,7 @@ const useStyles = makeStyles(theme => ({
         color: "#262A94",
         fontSize: "28px",
         fontWeight: "normal",
-        marginTop: "120px",
+        marginTop: "80px",
         [theme.breakpoints.down("sm")]: {
             marginTop: "10px",
             fontSize: "15px",
@@ -70,7 +70,7 @@ const useStyles = makeStyles(theme => ({
         olor: "#262A94",
         fontSize: "28px",
         fontWeight: "600",
-        marginTop: "120px",
+        marginTop: "80px",
         [theme.breakpoints.down("sm")]: {
             marginTop: "10px",
             fontSize: "15px",
