@@ -13,12 +13,12 @@ export default function App() {
     <div className={classes.container}>
       <Header />
       <Switch>
-        <Route exact from="/" component={() => (<Home info="Home" />)} />
-        <Route exact path="/product" component={Product} />
-        <Route exact path="/personas" component={() => (<Home info="Persons" />)} />
-        <Route exact path="/blog" component={() => (<Home info="Blog" />)} />
-        <Route exact path="/meet-the-zipsters" component={() => (<Home info="Meet The Zipsters" />)} />
-        <Route exact path="/request-a-Demo" component={() => (<Home info="Request A Demo" />)} />
+        <Route exact from="/Website/" component={() => (<Home info="Home" />)} />
+        <Route exact path="/Website/product" component={Product} />
+        <Route exact path="/Website/personas" component={() => (<Home info="Persons" />)} />
+        <Route exact path="/Website/blog" component={() => (<Home info="Blog" />)} />
+        <Route exact path="/Website/meet-the-zipsters" component={() => (<Home info="Meet The Zipsters" />)} />
+        <Route exact path="/Website/request-a-Demo" component={() => (<Home info="Request A Demo" />)} />
       </Switch>
     </div>
   );

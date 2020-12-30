@@ -119,27 +119,27 @@ const Header = props => {
     const menuItems = [
         {
             menuTitle: "Home",
-            pageURL: "/"
+            pageURL: "/Website/"
         },
         {
             menuTitle: "Product",
-            pageURL: "/product"
+            pageURL: "/Website/product"
         },
         {
             menuTitle: "Personas",
-            pageURL: "/personas"
+            pageURL: "/Website/personas"
         },
         {
             menuTitle: "Blog",
-            pageURL: "/blog"
+            pageURL: "/Website/blog"
         },
         {
             menuTitle: "Meet The Zipsters",
-            pageURL: "/meet-the-zipsters"
+            pageURL: "/Website/meet-the-zipsters"
         },
         {
             menuTitle: "Request A Demo",
-            pageURL: "/request-a-Demo"
+            pageURL: "/Website/request-a-Demo"
         },
 
     ];
@@ -193,37 +193,37 @@ const Header = props => {
                             <div className={classes.headerOptions}>
                                 <Button
                                     className={homeSelected ? classes.selectedItems : classes.navItems}
-                                    onClick={() => { handleButtonClick("/"); setHomeSelected(true); setProductSelected(false); setPersonsSelected(false); setBlogSelected(false); setMeetSelected(false)}}
+                                    onClick={() => { handleButtonClick("/Website/"); setHomeSelected(true); setProductSelected(false); setPersonsSelected(false); setBlogSelected(false); setMeetSelected(false)}}
                                 >
                                     Home
                                 </Button>
                                 <Button
                                     className={productSelected ? classes.selectedItems : classes.navItems}
-                                    onClick={() => {handleButtonClick("/product"); setHomeSelected(false); setProductSelected(true); setPersonsSelected(false); setBlogSelected(false); setMeetSelected(false)}}
+                                    onClick={() => {handleButtonClick("/Website/product"); setHomeSelected(false); setProductSelected(true); setPersonsSelected(false); setBlogSelected(false); setMeetSelected(false)}}
                                 >
                                     Product
                                 </Button>
                                 <Button
                                     className={personsSelected ? classes.selectedItems : classes.navItems}
-                                    onClick={() => {handleButtonClick("/personas"); setHomeSelected(false); setProductSelected(false); setPersonsSelected(true); setBlogSelected(false); setMeetSelected(false)}}
+                                    onClick={() => {handleButtonClick("/Website/personas"); setHomeSelected(false); setProductSelected(false); setPersonsSelected(true); setBlogSelected(false); setMeetSelected(false)}}
                                 >
                                     Personas
                                 </Button>
                                 <Button
                                     className={blogSelected ? classes.selectedItems : classes.navItems}
-                                    onClick={() => {handleButtonClick("/blog"); setHomeSelected(false); setProductSelected(false); setPersonsSelected(false); setBlogSelected(true); setMeetSelected(false)}}
+                                    onClick={() => {handleButtonClick("/Website/blog"); setHomeSelected(false); setProductSelected(false); setPersonsSelected(false); setBlogSelected(true); setMeetSelected(false)}}
                                 >
                                     Blog
                                 </Button>
                                 <Button
                                     className={meetSelected ? classes.selectedItems : classes.navItems}
-                                    onClick={() => {handleButtonClick("/meet-the-zipsters"); setHomeSelected(false); setProductSelected(false); setPersonsSelected(false); setBlogSelected(false); setMeetSelected(true)}}
+                                    onClick={() => {handleButtonClick("/Website/meet-the-zipsters"); setHomeSelected(false); setProductSelected(false); setPersonsSelected(false); setBlogSelected(false); setMeetSelected(true)}}
                                 >
                                     Meet The Zipsters
                                 </Button>
                                 <Button
                                     className={classes.lastNavItems}
-                                    onClick={() => handleButtonClick("/request-a-Demo")}
+                                    onClick={() => handleButtonClick("/Website/request-a-Demo")}
                                 >
                                     Request A Demo
                                 </Button>

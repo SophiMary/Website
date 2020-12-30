@@ -111,29 +111,29 @@ function Product() {
                                 <Grid item className={classes.tab} md={4}>
                                     <Paper className={classes.paper}>
                                         <Typography className={creatorSelected ? classes.selectedProductSection : classes.productSection}>
-                                            <Link to="/product/creator" onClick={() => { setSelected(true); setCreatorSelected(true); setPlayerSelected(false); setDashboardSelected(false) }}>Creator</Link>
+                                            <Link to="/Website/product/creator" onClick={() => { setSelected(true); setCreatorSelected(true); setPlayerSelected(false); setDashboardSelected(false) }}>Creator</Link>
                                         </Typography>
                                     </Paper>
                                 </Grid>
                                 <Grid item className={classes.tab} md={4}>
                                     <Paper className={classes.paper}>
                                         <Typography className={playerSelected ? classes.selectedProductSection : classes.productSection}>
-                                            <Link to="/product/player" onClick={() => { setSelected(false); setSecondSelected(true); setCreatorSelected(false); setPlayerSelected(true); setDashboardSelected(false) }}>Player</Link>
+                                            <Link to="/Website/product/player" onClick={() => { setSelected(false); setSecondSelected(true); setCreatorSelected(false); setPlayerSelected(true); setDashboardSelected(false) }}>Player</Link>
                                         </Typography>
                                     </Paper>
                                 </Grid>
                                 <Grid item className={classes.tab} md={4}>
                                     <Paper className={classes.paper}>
                                         <Typography className={dashboardSelected ? classes.selectedProductSection : classes.productSection}>
-                                            <Link to="/product/dashboard" onClick={() => { setSelected(false); setSecondSelected(false); setCreatorSelected(false); setPlayerSelected(false); setDashboardSelected(true) }}>Dashboard</Link>
+                                            <Link to="/Website/product/dashboard" onClick={() => { setSelected(false); setSecondSelected(false); setCreatorSelected(false); setPlayerSelected(false); setDashboardSelected(true) }}>Dashboard</Link>
                                         </Typography>
                                     </Paper>
                                 </Grid>
                             </Grid>
                             <div>
-                                <Route path="/product/creator" exact component={() => (<ProductPages image={creatorImg} />)} />
-                                <Route path="/product/player" exact component={() => (<ProductPages image={playerImg} />)} />
-                                <Route path="/product/dashboard" exact component={() => (<ProductPages image={dashboardImg} />)} />
+                                <Route path="/Website/product/creator" exact component={() => (<ProductPages image={creatorImg} />)} />
+                                <Route path="/Website/product/player" exact component={() => (<ProductPages image={playerImg} />)} />
+                                <Route path="/Website/product/dashboard" exact component={() => (<ProductPages image={dashboardImg} />)} />
                             </div>
                         </BrowserRouter>
                     </div>
