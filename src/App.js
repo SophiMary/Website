@@ -15,7 +15,7 @@ export default function App() {
       <Header />
       <Switch>
         <Route exact from="/" component={() => (<Home info="Home" />)} />
-        <Route exact path="/product" render={props => <Product {...props} />} />
+        <Route exact path="/product" component={Product} />
         <Route exact path="/personas" component={() => (<Home info="Persons" />)} />
         <Route exact path="/blog" component={() => (<Home info="Blog" />)} />
         <Route exact path="/meet-the-zipsters" component={() => (<Home info="Meet The Zipsters" />)} />

@@ -76,7 +76,8 @@ const useStyles = makeStyles(theme => ({
         justifyContent: "space-evenly",
         "& .MuiButton-root:hover": {
             backgroundColor: "inherit",
-            borderBottom: "2px solid currentColor",
+            borderBottom: "3px solid currentColor",
+            borderRadius: "0"
         },
     },
 }));

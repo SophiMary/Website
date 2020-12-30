@@ -6,11 +6,9 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(
-  <React.StrictMode>
-    <Router>
-      <CssBaseline />
-      <App />
-    </Router>
-  </React.StrictMode>,
+  <Router>
+    <CssBaseline />
+    <App />
+  </Router>,
   rootElement
 );
