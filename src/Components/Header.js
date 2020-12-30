@@ -149,7 +149,7 @@ const Header = props => {
             <AppBar position="static">
                 <Toolbar className={classes.toolBar}>
                     <Typography variant="h6" className={classes.title}>
-                        <img className={classes.brandLogo} src={logo} alt="logo" onClick={() => handleButtonClick("/Website/")} />
+                        <img className={classes.brandLogo} src={logo} alt="logo" onClick={() => {handleButtonClick("/Website/"); setHomeSelected(true); setProductSelected(false); setPersonsSelected(false); setBlogSelected(false); setMeetSelected(false)}} />
                     </Typography>
                     {/* Menu Bar */}
                     {isMobile ? (
