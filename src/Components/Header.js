@@ -1,174 +1,222 @@
 import React from "react";
-import {
-    Paper,
-    AppBar,
-    Toolbar,
-    IconButton,
-    Typography,
-    MenuItem,
-    Menu
-} from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
+import Menu from "@material-ui/core/Menu";
+import Button from "@material-ui/core/Button";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { withRouter } from "react-router-dom";
 import logo from "./logo.png";
 
-const useStyles = makeStyles((theme) => ({
-    grow: {
+const useStyles = makeStyles(theme => ({
+    root: {
         flexGrow: 1,
-        "& .MuiAppBar-colorPrimary": {
-            backgroundColor: "#fff",
-            color: "#7F7F7F"
-        },
     },
     toolBar: {
-        paddingTop: "5px",
-        borderBottom: "2px solid #2E3291",
-    },
-    paper: {
-        color: "#2E3291",
-        boxShadow: "none",
-        marginRight: "50px",
-        fontWeight: "600",
-        fontSize: "20px",
-        whiteSpace: "nowrap",
-    },
-    lastNavItem: {
-        color: "#fff",
-        backgroundColor: "#671ADB",
-        padding: "10px 15px",
-        borderRadius: "20px",
-        boxShadow: "none",
-        margin: "auto 80px",
-        fontWeight: "400",
-        fontSize: "15px",
-        whiteSpace: "nowrap",
-    },
-    title: {
-        display: "block"
-    },
-    sectionDesktop: {
-        display: "none",
-        [theme.breakpoints.up("md")]: {
-            display: "flex",
-            alignItems: "center",
-        },
-    },
-    sectionMobile: {
-        display: "flex",
-        [theme.breakpoints.up("md")]: {
-            display: "none"
-        },
-        "& .MuiSvgIcon-root": {
-            fontSize: "35px",
-        },
+        backgroundColor: "#fff",
+        borderBottom: "2px solid #262A94"
     },
     brandLogo: {
-        width: "10%",
-        [theme.breakpoints.down('lg')]: {
-            width: "20%",
+        width: "30%",
+        paddingTop: "10px",
+        cursor: "pointer",
+        [theme.breakpoints.down("lg")]: {
+            width: "45%",
         },
-        [theme.breakpoints.down('md')]: {
+        [theme.breakpoints.down("md")]: {
+            width: "25%",
+        },
+        [theme.breakpoints.down("sm")]: {
             width: "30%",
         },
-        [theme.breakpoints.down('xs')]: {
-            width: "28%",
+        [theme.breakpoints.down("xs")]: {
+            width: "40%",
+        },
+    },
+    menuItems: {
+        color: "#262A94",
+    },
+    navItems: {
+        color: "#262A94",
+        fontWeight: "500",
+        fontSize: "20px",
+        marginRight: "40px",
+        textTransform: "none",
+        whiteSpace: "nowrap",
+    },
+    lastNavItems: {
+        backgroundColor: "#9A60F2 !important",
+        color: "#fff",
+        fontSize: "15px",
+        margin: "auto 100px",
+        textTransform: "none",
+        whiteSpace: "nowrap",
+        padding: "5px 25px",
+        borderRadius: "20px",
+    },
+    menuButton: {
+        marginRight: theme.spacing(2),
+        color: "grey",
+        "& .MuiSvgIcon-root": {
+            fontSize: "32px",
+        },
+    },
+    title: {
+        [theme.breakpoints.down("xs")]: {
+            flexGrow: 1
+        },
+    },
+    headerOptions: {
+        display: "flex",
+        flex: 1,
+        justifyContent: "space-evenly",
+        "& .MuiButton-root:hover": {
+            backgroundColor: "inherit",
+            borderBottom: "2px solid currentColor",
         },
     },
 }));
 
-export default function Demo() {
+const Header = props => {
+    const { history } = props;
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
-    const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+    const open = Boolean(anchorEl);
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
-    const isMenuOpen = Boolean(anchorEl);
-    const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
-    const handleMobileMenuClose = () => {
-        setMobileMoreAnchorEl(null);
+    const handleMenu = event => {
+        setAnchorEl(event.currentTarget);
     };
 
-    const handleMenuClose = () => {
+    const handleMenuClick = pageURL => {
+        history.push(pageURL);
         setAnchorEl(null);
-        handleMobileMenuClose();
     };
 
-    const handleMobileMenuOpen = (event) => {
-        setMobileMoreAnchorEl(event.currentTarget);
+    const handleButtonClick = pageURL => {
+        history.push(pageURL);
     };
 
-    const menuId = "primary-search-account-menu";
-    const renderMenu = (
-        <Menu
-            anchorEl={anchorEl}
-            anchorOrigin={{ vertical: "top", horizontal: "right" }}
-            id={menuId}
-            keepMounted
-            transformOrigin={{ vertical: "top", horizontal: "right" }}
-            open={isMenuOpen}
-            onClose={handleMenuClose}
-        ></Menu>
-    );
+    const menuItems = [
+        {
+            menuTitle: "Home",
+            pageURL: "/"
+        },
+        {
+            menuTitle: "Product",
+            pageURL: "/product"
+        },
+        {
+            menuTitle: "Personas",
+            pageURL: "/personas"
+        },
+        {
+            menuTitle: "Blog",
+            pageURL: "/blog"
+        },
+        {
+            menuTitle: "Meet The Zipsters",
+            pageURL: "/meet-the-zipsters"
+        },
+        {
+            menuTitle: "Request A Demo",
+            pageURL: "/request-a-Demo"
+        },
 
-    const mobileMenuId = "primary-search-account-menu-mobile";
-    const renderMobileMenu = (
-        <Menu
-            anchorEl={mobileMoreAnchorEl}
-            anchorOrigin={{ vertical: "top", horizontal: "right" }}
-            id={mobileMenuId}
-            keepMounted
-            transformOrigin={{ vertical: "top", horizontal: "right" }}
-            open={isMobileMenuOpen}
-            onClose={handleMobileMenuClose}
-        >
-            <MenuItem>
-                <Paper>Hi</Paper>
-            </MenuItem>
-            <MenuItem>
-                <Paper>Hi</Paper>
-            </MenuItem>
-            <MenuItem>
-                <Paper>Hi</Paper>
-            </MenuItem>
-        </Menu>
-    );
+    ];
 
     return (
-        <>
-            <div className={classes.grow}>
-                <AppBar position="static">
-                    <Toolbar className={classes.toolBar}>
-                        <div>
-                            <Typography className={classes.title} variant="h6" noWrap>
-                                <img className={classes.brandLogo} src={logo} alt="logo" />
-                            </Typography>
-                        </div>
-                        {/* <div className={classes.grow} /> */}
-                        <div className={classes.sectionDesktop}>
-                            <Paper className={classes.paper}>Home</Paper>
-                            <Paper className={classes.paper}>Product</Paper>
-                            <Paper className={classes.paper}>Peronas</Paper>
-                            <Paper className={classes.paper}>Blog</Paper>
-                            <Paper className={classes.paper}>Meet The Zipsters</Paper>
-                            <Paper className={classes.lastNavItem}>Meet The Zipsters</Paper>
-                        </div>
-
-                        <div className={classes.sectionMobile}>
+        <div className={classes.root}>
+            <AppBar position="static">
+                <Toolbar className={classes.toolBar}>
+                    <Typography variant="h6" className={classes.title}>
+                        <img className={classes.brandLogo} src={logo} alt="logo" onClick={() => handleButtonClick("/")} />
+                    </Typography>
+                    {isMobile ? (
+                        <>
                             <IconButton
-                                aria-label="show more"
-                                aria-controls={mobileMenuId}
-                                aria-haspopup="true"
-                                onClick={handleMobileMenuOpen}
+                                edge="start"
+                                className={classes.menuButton}
                                 color="inherit"
+                                aria-label="menu"
+                                onClick={handleMenu}
                             >
                                 <MenuIcon />
                             </IconButton>
-                        </div>
-                    </Toolbar>
-                </AppBar>
-                {renderMobileMenu}
-                {renderMenu}
-            </div>
-        </>
+                            <Menu
+                                id="menu-appbar"
+                                anchorEl={anchorEl}
+                                anchorOrigin={{
+                                    vertical: "top",
+                                    horizontal: "right"
+                                }}
+                                keepMounted
+                                transformOrigin={{
+                                    vertical: "top",
+                                    horizontal: "right"
+                                }}
+                                open={open}
+                                onClose={() => setAnchorEl(null)}
+                            >
+                                {menuItems.map(menuItem => {
+                                    const { menuTitle, pageURL } = menuItem;
+                                    return (
+                                        <MenuItem className={classes.menuItems} onClick={() => handleMenuClick(pageURL)}>
+                                            {menuTitle}
+                                        </MenuItem>
+                                    );
+                                })}
+                            </Menu>
+                        </>
+                    ) : (
+                            <div className={classes.headerOptions}>
+                                <Button
+                                    className={classes.navItems}
+                                    onClick={() => handleButtonClick("/")}
+                                >
+                                    Home
+                                </Button>
+                                <Button
+                                    className={classes.navItems}
+                                    onClick={() => handleButtonClick("/product")}
+                                >
+                                    Product
+                                </Button>
+                                <Button
+                                    className={classes.navItems}
+                                    onClick={() => handleButtonClick("/personas")}
+                                >
+                                    Personas
+                                </Button>
+                                <Button
+                                    className={classes.navItems}
+                                    onClick={() => handleButtonClick("/blog")}
+                                >
+                                    Blog
+                                </Button>
+                                <Button
+                                    className={classes.navItems}
+                                    onClick={() => handleButtonClick("/meet-the-zipsters")}
+                                >
+                                    Meet The Zipsters
+                                </Button>
+                                <Button
+                                    className={classes.lastNavItems}
+                                    onClick={() => handleButtonClick("/request-a-Demo")}
+                                >
+                                    Request A Demo
+                                </Button>
+                            </div>
+                        )}
+                </Toolbar>
+            </AppBar>
+        </div>
     );
-}
+};
+
+export default withRouter(Header);
