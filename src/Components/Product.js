@@ -14,26 +14,59 @@ import ProductPages from "./ProductPages";
 
 const useStyles = makeStyles(theme => ({
     product: {
-        height: "95vh",
+        height: "92vh",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
+        [theme.breakpoints.down("lg")]: {
+            height: "94vh",
+        },
+        [theme.breakpoints.down("md")]: {
+            height: "93vh",
+        },
+        [theme.breakpoints.down("xs")]: {
+            height: "95vh",
+        },
     },
     image1: {
         background: `url(${creatorBG}), url(${productBG})`,
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "40% 96%, 45% 140%",
+        [theme.breakpoints.up("md")]: {
+            backgroundPosition: "80% 75%, 80% 120%",
+        },
+        [theme.breakpoints.up("xs")]: {
+            backgroundPosition: "80% 75%, 80% 75%",
+        },
+        [theme.breakpoints.up("sm")]: {
+            backgroundPosition: "80% 100%, 80% 80%",
+        },
     },
     image2: {
         background: `url(${playerBG}), url(${productBG})`,
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "40% 96%, 45% 140%",
+        [theme.breakpoints.up("md")]: {
+            backgroundPosition: "80% 75%, 80% 120%",
+        },
+        [theme.breakpoints.up("xs")]: {
+            backgroundPosition: "80% 75%, 80% 75%",
+        },
+        [theme.breakpoints.up("sm")]: {
+            backgroundPosition: "80% 100%, 80% 80%",
+        },
     },
     image3: {
         background: `url(${dashboardBG}), url(${productBG})`,
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "40% 96%, 45% 140%",
+        [theme.breakpoints.up("md")]: {
+            backgroundPosition: "80% 75%, 80% 120%",
+        },
+        [theme.breakpoints.up("xs")]: {
+            backgroundPosition: "80% 75%, 80% 54%",
+        },
+        [theme.breakpoints.up("sm")]: {
+            backgroundPosition: "80% 100%, 80% 80%",
+        },
     },
     content: {
         color: "#262A94",
