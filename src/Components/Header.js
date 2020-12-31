@@ -123,7 +123,7 @@ const Header = props => {
         },
         {
             menuTitle: "Product",
-            pageURL: "/Website/product"
+            pageURL: "/Website/product/creator"
         },
         {
             menuTitle: "Personas",
@@ -199,7 +199,7 @@ const Header = props => {
                                 </Button>
                                 <Button
                                     className={productSelected ? classes.selectedItems : classes.navItems}
-                                    onClick={() => {handleButtonClick("/Website/product"); setHomeSelected(false); setProductSelected(true); setPersonsSelected(false); setBlogSelected(false); setMeetSelected(false)}}
+                                    onClick={() => {handleButtonClick("/Website/product/creator"); setHomeSelected(false); setProductSelected(true); setPersonsSelected(false); setBlogSelected(false); setMeetSelected(false)}}
                                 >
                                     Product
                                 </Button>
