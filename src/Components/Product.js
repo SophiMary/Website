@@ -126,7 +126,7 @@ const useStyles = makeStyles(theme => ({
 function Product() {
     const [selected, setSelected] = React.useState(true);
     const [secondSelected, setSecondSelected] = React.useState(false);
-    const [creatorSelected, setCreatorSelected] = React.useState(false);
+    const [creatorSelected, setCreatorSelected] = React.useState(true);
     const [playerSelected, setPlayerSelected] = React.useState(false);
     const [dashboardSelected, setDashboardSelected] = React.useState(false);
     const classes = useStyles();

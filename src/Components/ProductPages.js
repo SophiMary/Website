@@ -11,7 +11,7 @@ const useStyles = makeStyles(theme => ({
         boxShadow: "3px 4px 25px 2px #BCC3DC"
     },
     tabImages: {
-        width: "auto",
+        width: "800px",
         [theme.breakpoints.down("md")]: {
             width: "700px",
             padding: "5px",
